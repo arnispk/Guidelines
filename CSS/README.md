@@ -59,6 +59,7 @@ Categorize your stylesheets. As in many architectural patterns, their are more w
 3. Module
 4. State
 5. Theme
+
 (SMACCS-approach)
 
 1. base/
@@ -68,7 +69,76 @@ Categorize your stylesheets. As in many architectural patterns, their are more w
 5. themes/
 6. utils/
 7. vendors/
-*1 main file to rule them all*
+
 (7-to-1 Pattern using SASS)
 
 As you can see, categorizing is slightly arbitrary. One might say "pages" and "vendors" belong to "modules", where others might say that the category "module" is way to general to actually stick to. What stands out however is that both classifications implicate the use of separate files that each are responsible for the styling of only one particular part of your application. In extremis this is applicable to all code within the whole project. (You might even implicate this architecture stands the ground for MVC's such as Angular and/or BEM-projects as well).
+
+
+### Sample Directory Structure
+*SMACCS*
+```
+sass/
+|
+|- layout
+|  |- grid.scss
+|  |- alternate.scss
+|- module/
+|     |- callout.scss
+|     |- bookmarks.scss
+|     |- btn.scss
+|     |- btn-compose.scss
+|- base.scss
+|- states.scss
+|- site-settings.scss
+|- mixins.scss
+```
+*7-to-1*
+```
+sass/
+|
+|– base/
+|   |– _reset.scss       # Reset/normalize
+|   |– _typography.scss  # Typography rules
+|   ...                  # Etc…
+|
+|– components/
+|   |– _buttons.scss     # Buttons
+|   |– _carousel.scss    # Carousel
+|   |– _cover.scss       # Cover
+|   |– _dropdown.scss    # Dropdown
+|   ...                  # Etc…
+|
+|– layout/
+|   |– _navigation.scss  # Navigation
+|   |– _grid.scss        # Grid system
+|   |– _header.scss      # Header
+|   |– _footer.scss      # Footer
+|   |– _sidebar.scss     # Sidebar
+|   |– _forms.scss       # Forms
+|   ...                  # Etc…
+|
+|– pages/
+|   |– _home.scss        # Home specific styles
+|   |– _contact.scss     # Contact specific styles
+|   ...                  # Etc…
+|
+|– themes/
+|   |– _theme.scss       # Default theme
+|   |– _admin.scss       # Admin theme
+|   ...                  # Etc…
+|
+|– utils/
+|   |– _variables.scss   # Sass Variables
+|   |– _functions.scss   # Sass Functions
+|   |– _mixins.scss      # Sass Mixins
+|   |– _helpers.scss     # Class & placeholders helpers
+|
+|– vendors/
+|   |– _bootstrap.scss   # Bootstrap
+|   |– _jquery-ui.scss   # jQuery UI
+|   ...                  # Etc…
+|
+|
+`– main.scss             # Main Sass file
+```
