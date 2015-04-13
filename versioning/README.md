@@ -51,5 +51,7 @@ A changelog:
   - deprecated
 - links to corresponding tickets (ZenDesk, Redmine, Asana, Jira, ...)
 
-<small>Source: [Mojombo server](https://github.com/mojombo/semver/blob/master/semver.md)</small>
+Sources:
++ [mojombo/semver](https://github.com/mojombo/semver/blob/master/semver.md)
++ [olivierlacan/keep-a-changelog](https://github.com/olivierlacan/keep-a-changelog/blob/gh-pages/CHANGELOG.md)
  
