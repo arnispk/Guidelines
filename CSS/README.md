@@ -1,18 +1,10 @@
-# Netwerven Styling Guidelines
-
-These are the Coding Guidelines for Frontend Developers at Netwerven. These guidelines are a summary of different guidelines and best-practices from all over the web, best matching with Ways of Workin (WoW) within Netwerven. Although these guidelines should not change too often, there may be new insights and/or new syntaxes to work with, that need there own guidelines. Also, these guidelines may be updated
-
-Version 1.0
-
+# CSS Coding Guidelines
 
 ## Key principles
-Whatever syntax you choose and whatever approach you prefer when styling a frontend-application; at all times:
 
 **KISS (Keep.It.Simple.Stupid)<br />
 & <br />
 DRY (Don’t.Repeat.Yourself)**
-
-However, all that follows are guidelines, not rigid rules. Sometimes pragmatism, might be favoured over guidelines. One of these is the use of a “shame”-module. It might not be the “cleanest” or “best” answer to a problem, but it might be a pragmatic answer at a certain point of time.
 
 ## Formatting
 
@@ -61,7 +53,7 @@ In addition meaningfull whitespace may be used according these rules:
 An empty line may follow after each type of property for readability.
 
 ### Commenting
-Ideally, any CSS ruleset should be preceded by a C-style comment explaining the point of the CSS block. This comment also hosts numbered explanations regarding specific parts of the ruleset. Example:
+Ideally, any CSS ruleset should be preceded by a C-style comment explaining the point of the CSS block. However you MUST provide a C-style comment for every module you style. A C-style comment hosts numbered explanations regarding specific parts of the ruleset. Example:
 ```
 /**
  * Helper class to truncate and add ellipsis to a string too long for it to fit
@@ -90,16 +82,10 @@ Although there is no such thing as *too much* commeting, please do never deploy 
 There is a lot to say about different CSS architectures and its advantages/disadvantages comparing to each other. But in general there are guidelines that apply to all of them. Even most of the frequently used Frameworks use some kind of architecture and though not every Framework will fit in neathly with a modularized architecture; with these guidelines, even Frameworks can be easily modified into this structure. <br />
 (And if not, you won't want to use this Framework anyway).
 
+At Netwerven we use the 7-to-1 Pattern.
+
 ### Categories
-Categorize your stylesheets. As in many architectural patterns, their are more ways to build the Pathenon, but two preferred methods are:
-
-*SMACCS-approach*
-
-1. Base
-2. Layout
-3. Module
-4. State
-5. Theme
+Categorize your stylesheets.
 
 *7-to-1 Pattern*
 
@@ -111,28 +97,9 @@ Categorize your stylesheets. As in many architectural patterns, their are more w
 6. utils/
 7. vendors/
 
-As you can see, categorizing is slightly arbitrary. One might say "pages" and "vendors" belong to "modules", where others might say that the category "module" is way to general to actually stick to. What stands out however is that both classifications implicate the use of separate files that each are responsible for the styling of only one particular part of your application. In extremis this is applicable to all code within the whole project. (You might even implicate this architecture stands the ground for MVC's such as Angular and/or BEM-projects as well).
-
+1 file to rule them all (main.scss). When using critical path loading, there may be several style files. Critical-path loading is not obliged at the moment however.
 
 ### Sample Directory Structure
-**SMACCS**
-```
-sass/
-|
-|- layout
-|  |- grid.scss
-|  |- alternate.scss
-|- module/
-|     |- callout.scss
-|     |- bookmarks.scss
-|     |- btn.scss
-|     |- btn-compose.scss
-|- base.scss
-|- states.scss
-|- site-settings.scss
-|- mixins.scss
-```
-**7-to-1**
 ```
 sass/
 |
@@ -182,7 +149,7 @@ sass/
 `– main.scss             # Main Sass file
 ```
 ## Naming Conventions
-Following above architecture (both structures) are giving inmidiate directions for naming conventions.  The use of naming convention is beneficial for immediately understanding which category a particular style belongs to and its role within the overall scope of the page.
+Architecture is giving inmidiate directions for naming conventions.  The use of naming convention is beneficial for immediately understanding which category a particular style belongs to and its role within the overall scope of the page.
 
 On large projects, it is more likely to have styles broken up across multiple files. In these cases, naming convention also makes it easier to find which file a style belongs to.
 
