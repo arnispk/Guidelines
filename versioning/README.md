@@ -3,7 +3,7 @@ Netwerven's semantic versioning logic must follow all rules that are described b
 
 ## Version numbers
 1. Given a version number MAJOR.MINOR.PATCH, increment the:
-  - MAJOR version when incompatible changes have been made,
+  - MAJOR version when major changes have been made,
   - MINOR version when functionality has been added in a backwards-compatible manner
   - PATCH version for backwards-compatible bug fixes.
   
@@ -12,14 +12,16 @@ internally.
   
 3. Version 1.0.0 denotes the release of the public website.
 
-4. Patch version Z (x.y.Z where x > 0) must be incremented whenever a bugfix has been issued
+4. Patch version Z (x.y.Z where x > 0) must be incremented whenever a bugfix has been issued. Multiple bugfixes can attribute to a single patch version increment.
 
-5. Minor version Y (x.Y.z where x > 0) must be incremented whenever new functionality (feature) or an 
-improvement/enhancement has been added. A minor version increment resets the patch version (z) to 0.
+5. Minor version Y (x.Y.z where x > 0) must be incremented whenever new functionality 
+(a feature, an improvement or an enhancement) has been added. A minor version increment resets the patch version (z) to 0. Multiple features can attribute to a single minor version increment.
 
 6. Major version X (X.y.z | X > 0) must be incremented when non-backwards compatible changes 
 have been introduced (e.g. an overhaul of a website's interface). The minor version (y) as well as the 
 patch version (z) have to be reset to 0.
+
+7. Version meta data M (x.y.z.M | M = short commit SHA) can be used for internal use to be able to reference individual commits.
 
 ## Releases
 A release is a set of changes, enhancements and/or fixes that is meant to be pushed to a production 
@@ -28,11 +30,6 @@ environment. A release can contain:
 - zero, one or more minor version increments and
 - zero, one or more patch version increments
 and leads to an increment of the version number.
-
-For instance, an upcoming release that has two extra functional additions as well as four bug fixes, 
-considering a public version number of 1.1.0, results in version 1.3.4.
-
-A major version surpasses any minor versions and patch versions. So, a major version with two extra functional additions as well as four bug fixes, considering the same aformentioned public version number, doesn't result in version 2.3.4, but results in version 2.0.0.
 
 A release is initially pushed to an acceptance or staging server. The postfix '-RCn' (where 'RC' stands for **R**elease **C**andidate and '**n**' is the release candidate incremental change counter) indicates that the release is a version ready to deploy, but isn't actually on production yet. 
 
