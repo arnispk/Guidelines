@@ -18,7 +18,7 @@ The search for a plug-in usually starts at the offical [WordPress plugins archiv
 <br />The plug-in should have a regular and consistent download frequency.
     
 - Support
-<br />Does the maintainer of the plug-in offer enough support by replying to questions of users or does the official plug-in site offer a forum or support section? The support section can also be located in an active public Github or Bitbucket repo. If the plug-in hasn't had active support or maintenance in the past year, using it should be carefully weighed against the benefits of the functionality the plug-in offers.
+<br />Does the maintainer of the plug-in offer enough support by replying to questions of users or does the official plug-in site offer a forum or support section? The support section can also be located in an active public Github or Bitbucket repo. If the plug-in hasn't had active support or maintenance in the past year, using it should be carefully weighed against the benefits of the functionality the plug-in offers. If the plugin is no longer maintained, however the feature is required and code is acceptable, it is possible to request ownership on the plugin as a whole.
 
 - Open source
 <br />A plug-in's code should be reviewable or, when the plug-in has to be purchased, at least be available beforehand.
