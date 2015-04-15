@@ -1,10 +1,10 @@
 # Plugin reviews
-Using Wordpress comes with an inevitability; using third-party plug-ins. These plug-ins become an integral part of the way a website works and influence overal security and performance. These aspects make it vitally important to review any plug-in that is proposed to be deployed by a developer.
+Using WordPress comes with an inevitability; using third-party plug-ins. These plug-ins become an integral part of the way a website works and influence overal security and performance. These aspects make it vitally important to review any plug-in that is proposed to be deployed by a developer.
 
 History has taught that even the most popular plug-ins can have security issues (see: [thehackernews.com](http://thehackernews.com/2015/03/wordpress-seo-by-yoast-plugin.html)) and should not be part of any website, that has been put into production, without a proper code review and/or security audit.
 
 ## Selection
-The search for a plug-in usually starts at the offical [Wordpress plugins archive](https://wordpress.org/plugins/). The selection of a plug-in should take into account the following:
+The search for a plug-in usually starts at the offical [WordPress plugins archive](https://wordpress.org/plugins/). The selection of a plug-in should take into account the following:
 - Documentation
 <br />The functionality of the plug-in should have been described clearly
 
@@ -22,6 +22,9 @@ The search for a plug-in usually starts at the offical [Wordpress plugins archiv
 
 - Open source
 <br />A plug-in's code should be reviewable or, when the plug-in has to be purchased, at least be available beforehand.
+
+- Compatibility
+<br />The plug-in must be compatible with the latest (stable) version of WordPress and not interfere with any other plug-in(s) that are used. Compatibility issues with other plug-ins might be documented on the plug-in site itself or could be found during installation.
 
 ## Review
 Once a plug-in has been selected and this plug-in is not listed in the [collection of approved and already deployed plug-ins](/#todo), the plug-in has to be reviewed by the team's lead or the CTO.
