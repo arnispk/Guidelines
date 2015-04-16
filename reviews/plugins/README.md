@@ -6,28 +6,28 @@ History has taught that even the most popular plug-ins can have security issues 
 ## Selection
 The search for a plug-in usually starts at the offical [WordPress plugins archive](https://wordpress.org/plugins/). The selection of a plug-in should take into account the following:
 - Documentation
-<br />The functionality of the plug-in should have been described clearly
+<br />The functionality of the plug-in has been described clearly
 
 - Ratings
-<br />The plug-in has to have a sufficient amount of ratings so that the average rating can be considered reliable. The amount of lowest possible ratings (1 and 2) should be minimal.
+<br />The plug-in has to have a sufficient amount of ratings so that the average rating can be considered reliable. The amount of lowest possible ratings (1 and 2) should be minimal. -> Please define "sufficient" and "minimal"
 
 - Reviews
-<br />Users that downloaded the plug-in should have posted positive reviews.
+<br />Users that downloaded the plug-in have posted positive reviews. -> minimal number of reviews?
     
 - Downloads
-<br />The plug-in should have a regular and consistent download frequency.
+<br />The plug-in has a regular and consistent download frequency. -> what is "regular and consistent" how is that controlled?
     
 - Support
-<br />Does the maintainer of the plug-in offer enough support by replying to questions of users or does the official plug-in site offer a forum or support section? The support section can also be located in an active public Github or Bitbucket repo. If the plug-in hasn't had active support or maintenance in the past year, using it should be carefully weighed against the benefits of the functionality the plug-in offers. If the plugin is no longer maintained, however the feature is required and code is acceptable, it is possible to request ownership on the plugin as a whole.
+<br />Does the maintainer of the plug-in offer enough support by replying to questions of users or does the official plug-in site offer a forum or support section? The support section can also be located in an active public Github or Bitbucket repo. If the plug-in hasn't had active support or maintenance in the past year, using it should be carefully weighed against the benefits of the functionality the plug-in offers. If the plugin is no longer maintained, however the feature is required and code is acceptable, it is possible to request ownership on the plugin as a whole. -> describe "enough"
 
 - Open source
-<br />A plug-in's code should be reviewable or, when the plug-in has to be purchased, at least be available beforehand.
+<br />A plug-in's code is reviewable or, when the plug-in has to be purchased, is available beforehand.
 
 - Compatibility
 <br />The plug-in must be compatible with the latest (stable) version of WordPress and not interfere with any other plug-in(s) that are used. Compatibility issues with other plug-ins might be documented on the plug-in site itself or could be found during installation.
 
 ## Review
-Once a plug-in has been selected and this plug-in is not listed in the [collection of approved and already deployed plug-ins](/#todo), the plug-in has to be reviewed by the team's lead or the CTO.
+Once a plug-in has been selected and this plug-in is not listed in the [collection of approved and already deployed plug-ins](/#todo), the plug-in has to be reviewed by the team's lead or the CTO. -> CTO?
 
 ### Approval
 If a plug-in is approved, it can be deployed and [the list of approved and already deployed plug-ins](/#todo) has to be updated by the approver.
