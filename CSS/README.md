@@ -73,7 +73,7 @@ When commenting a specific section, use inline comments instead of a C-style blo
 // `!global` flag is required so it actually updates the global variable.
 $imported-modules: append($imported-modules, $module) !global;
 ```
-Although there is no such thing as *too much* commeting, please always minify all css on production.
+Although there is no such thing as *too much* commenting, please always minify all css on production.
 
 ### Documentation
 [SassDoc](http://sassdoc.com/) provides tooling for creating (online) documentation for your (SASS)-project. Although it is recommended to use above commenting guidelines, since they will easily merge with i.e SassDoc, creating project Documentation is not obliged yet. 
@@ -94,7 +94,7 @@ Categorize your stylesheets.
 6. utils/
 7. vendors/
 
-1 file to rule them all (main.scss). When using critical path, there may be several style files. Critical-path is not mandatory at the moment however.
+1 file to rule them all (main.scss). When using critical path, there may be several style files.
 
 ### Sample Directory Structure
 ```
