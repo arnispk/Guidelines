@@ -12,11 +12,13 @@ Whatever syntax you choose and whatever approach you prefer when styling a front
 & <br />
 DRY (Don’t.Repeat.Yourself)**
 
-However, all that follows are guidelines, not rigid rules. Sometimes pragmatism, might be favoured over guidelines. One of these is the use of a “shame”-module. It might not be the “cleanest” or “best” answer to a problem, but it might be a pragmatic answer at a certain point of time.
+However, all that follows are guidelines, not rigid rules. Sometimes pragmatism might be favoured over guidelines. One of these is the use of a "shame”-module". It might not be the 'cleanest' or 'best' answer to a problem, but it might be a pragmatic answer at a certain point of time.
 
 ## Formatting
 
 ### General
+* utf-8 character encoding for each file
+* unix line-endings
 * four (4) space indent
 * properly written, multi-line CSS rules
 * meaningfull use of whitespace (CSS Ruleset)
@@ -25,13 +27,13 @@ However, all that follows are guidelines, not rigid rules. Sometimes pragmatism,
 * Decimals below one (1) will be proceded by a leading zero
 
 ### CSS Ruleset
-* related selectors on the same line; unrelated selectors on new lines;
-* the opening brace ({) spaced from the last selector by a single space;
-* each declaration on its own new line;
-* a space after the colon (:);
-* a trailing semi-colon (;) at the end of all declarations;
-* the closing brace (}) on its own new line;
-* a new line after the closing brace }
+* related selectors on the same line; unrelated selectors on new lines
+* the opening brace `{` spaced from the last selector by a single space
+* each declaration on its own new line
+* a space after the colon `:`
+* a trailing semi-colon `;` at the end of all declarations
+* the closing brace `}` on its own new line
+* a new line after the closing brace `}`
 
 In addition meaningfull whitespace may be used according these rules:
 
@@ -42,7 +44,7 @@ In addition meaningfull whitespace may be used according these rules:
   4. Text
   5. Other
 
-An empty line may follow after each type of property for readability. (especially wiht the use/need of web-prefixes)
+An empty line may follow after each type of property for readability. (especially with the use/need of web-prefixes)
 
 ### Comments
 To be added (when to use '//' vs '/*' i.e. Can be found in SMACCS)
@@ -52,7 +54,7 @@ There is a lot to say about different CSS architectures and its advantages/disad
 (And if not, you won't want to use this Framework anyway).
 
 ### Categories
-Categorize your stylesheets. As in many architectural patterns, their are more ways to build the Pathenon, but two preferred methods are:
+Categorize your stylesheets. As in many architectural patterns, their are more ways to build the Parthenon, but two preferred methods are:
 
 1. Base
 2. Layout
