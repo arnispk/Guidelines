@@ -9,6 +9,8 @@ DRY (Don’t.Repeat.Yourself)**
 ## Formatting
 
 ### General
+* utf-8 character encoding for each file
+* unix line-endings
 * four (4) space indent
 * properly written, multi-line CSS rules
 * meaningful use of whitespace (see also: CSS Ruleset)
@@ -17,13 +19,15 @@ DRY (Don’t.Repeat.Yourself)**
 * Decimals below one (1) will be proceded by a leading zero
 
 ### CSS Ruleset
-* related selectors on the same line; unrelated selectors on new lines;
-* the opening brace ({) spaced from the last selector by a single space;
-* each declaration on its own new line;
-* a space after the colon (:);
-* a trailing semi-colon (;) at the end of all declarations;
-* the closing brace (}) on its own new line;
-* a new line after the closing brace }
+
+* related selectors on the same line; unrelated selectors on new lines
+* the opening brace `{` spaced from the last selector by a single space
+* each declaration on its own new line
+* a space after the colon `:`
+* a trailing semi-colon `;` at the end of all declarations
+* the closing brace `}` on its own new line
+* a new line after the closing brace `}`
+
 ```
 // Yep
 .foo, .foo-bar,
@@ -50,7 +54,7 @@ In addition meaningful whitespace may be used according to these rules:
   4. Text
   5. Other
 
-An empty line may follow after each type of property for readability.
+An empty line may follow after each type of property for readability. (especially with the use/need of web-prefixes)
 
 ### Commenting
 Provide a C-style comment for every module you style. A C-style comment hosts numbered explanations regarding specific parts of the ruleset. Example:
@@ -76,7 +80,7 @@ $imported-modules: append($imported-modules, $module) !global;
 Although there is no such thing as *too much* commenting, please always minify all css on production.
 
 ### Documentation
-[SassDoc](http://sassdoc.com/) provides tooling for creating (online) documentation for your (SASS)-project. Although it is recommended to use above commenting guidelines, since they will easily merge with i.e SassDoc, creating project Documentation is not obliged yet. 
+[SassDoc](http://sassdoc.com/) provides tooling for creating (online) documentation for your (SASS)-project. Although it is recommended to use above commenting guidelines, since they will easily merge with i.e SassDoc, creating project Documentation is not obliged yet.
 
 ## Architecture
 At Netwerven we use the 7-to-1 Pattern.
