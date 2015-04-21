@@ -5,7 +5,7 @@ The rules in the underlying documents are objective and subject to change. Guide
 ## How-to
 Write access for this repo is restricted. If you want to propose a change, start editing one of the documents or create a new one by clicking the '+' next to the repo name. You can also create an issue and assign this to one the repo owners.
 
-In order for a pull request to be reviewed, it should:
+In order for a pull request to be accepted, it should:
 - In case of a new set of guidelines:
   - have a README.md
   - be in its own folder and the folder name should be lowercase<br />
