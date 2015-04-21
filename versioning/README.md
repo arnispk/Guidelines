@@ -35,6 +35,8 @@ A release is initially pushed to an acceptance or staging server. The postfix '-
 
 Each change to the release candidate increments 'n'. So, the first RC for the major version 2.0.0 is 2.0.0-RC1. The second 2.0.0-RC2. The third 2.0.0-RC3 and so on. A push to production removes the '-RCn' postfix.
 
+A release indicates a halt on feature development.
+
 ### Changelogs
 Each release will have an accompanying changelog that lists all of the changes that have been made 
 compared to the version before that.
@@ -52,3 +54,5 @@ Sources:
 + [mojombo/semver](https://github.com/mojombo/semver/blob/master/semver.md)
 + [olivierlacan/keep-a-changelog](https://github.com/olivierlacan/keep-a-changelog/blob/gh-pages/CHANGELOG.md)
  
+### Github/SourceTree
+Github supports creating releases, Git doesn't. That is why SourceTree isn't able to handle semantic versioning. For every release that needs to be created, don't do it in SourceTree.
