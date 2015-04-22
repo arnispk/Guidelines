@@ -36,3 +36,6 @@ If a plug-in is approved, it can be deployed and [the list of approved and alrea
 If it so happens that a proposed plug-in is disapproved, there are two possibilities:
 - Either the approver deems the quality of the code of the plug-in in such a bad state, that the use is rejected. Rejection of a plugin has to be listed and documented in [the rejected plug-ins list](/#todo).
 - The approver sees room for improval and the plug-in can still be used after adaptation of the code. Adaptation of the code can be proposed as a pull request if the plug-in has an active public repo on Github or Bitbucket or the plug-in can be altered by the approver or an appropriate team member. If the plug-in is altered and ownership is transfered to the development team, changes made to the plug-in shall be recorded in the plug-in's documentation.
+
+### Checklist
+A plug-in must 
