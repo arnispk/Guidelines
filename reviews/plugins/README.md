@@ -26,6 +26,8 @@ The search for a plug-in usually starts at the offical [WordPress plugins archiv
 - Compatibility
 <br />The plug-in MUST be compatible with the latest (stable) version of WordPress and not interfere with any other plug-in(s) that are used. Compatibility issues with other plug-ins might be documented on the plug-in site itself or could be found during installation.
 
+If wordpress.org shows an older version as compatible, it MUST be reviewed in case the functionality is required (and not available through other plugins).
+
 ## Review
 Once a plug-in has been selected and this plug-in is not listed in the [collection of approved and already deployed plug-ins](/#todo), the plug-in MUST be reviewed by the team's lead or the CTO.
 
