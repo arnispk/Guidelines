@@ -38,4 +38,13 @@ If it so happens that a proposed plug-in is disapproved, there are two possibili
 - The approver sees room for improval and the plug-in MAY still be used after adaptation of the code. Adaptation of the code can be proposed as a pull request if the plug-in has an active public repo on Github or Bitbucket or the plug-in can be altered by the approver or an appropriate team member. If the plug-in is altered and ownership is transfered to the development team, changes made to the plug-in SHALL be recorded in the plug-in's documentation.
 
 ### Checklist
-A plug-in must 
+A plug-in complies to the following:
+- Any file that executes code on an http request, MUST contain a line similar to
+```php
+defined('ABSPATH') or die('Direct access not allowed');
+```
+- A plug-in SHOULD use Wordpress' APIs instead of using direct SQL
+- Running the plug-in SHALL NOT show any notices or warnings
+- A plug-in SHALL NOT echo `<script>` and `<style>` tags directly, but instead use `wp_enqueue_style()` and `wp_enqueue_script()` functions
+- All texts in a plug-in MUST be [translateable](https://codex.wordpress.org/I18n_for_WordPress_Developers)
+- Functions in the plug-in SHOULD be [hookable](https://codex.wordpress.org/Plugin_API#Hook_to_WordPress)
