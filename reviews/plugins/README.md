@@ -43,7 +43,7 @@ A plug-in complies to the following:
 ```php
 defined('ABSPATH') or die('Direct access not allowed');
 ```
-- A plug-in SHOULD use Wordpress' APIs instead of using direct SQL
+- A plug-in MUST use Wordpress' APIs instead of using direct SQL
 - Running the plug-in SHALL NOT show any notices or warnings
 - A plug-in SHALL NOT echo `<script>` and `<style>` tags directly, but instead use `wp_enqueue_style()` and `wp_enqueue_script()` functions
 - All texts in a plug-in MUST be [translateable](https://codex.wordpress.org/I18n_for_WordPress_Developers)
