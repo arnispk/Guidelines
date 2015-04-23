@@ -35,7 +35,7 @@ A release is initially pushed to an acceptance or staging server. The postfix '-
 
 Each change to the release candidate increments 'n'. So, the first RC for the major version 2.0.0 is 2.0.0-RC1. The second 2.0.0-RC2. The third 2.0.0-RC3 and so on. A push to production removes the '-RCn' postfix.
 
-A release indicates a halt on feature development.
+A release indicates a feature stop. Feature development MAY continue, but those features SHALL not be incorporated in the said release.
 
 ### Changelogs
 Each release will have an accompanying changelog that lists all of the changes that have been made 
