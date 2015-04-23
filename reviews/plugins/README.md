@@ -9,7 +9,7 @@ The search for a plug-in usually starts at the offical [WordPress plugins archiv
 <br />The functionality of the plug-in SHOULD have been described clearly
 
 - Ratings
-<br />The plug-in MUST have a sufficient amount of ratings so that the average rating can be considered reliable. The amount of lowest possible ratings (1 and 2) SHOULD be minimal.
+<br />The plug-in SHOULD have a sufficient amount of ratings so that the average rating can be considered reliable. The amount of lowest possible ratings (1 and 2) SHOULD be minimal.
 
 - Reviews
 <br />Users that downloaded the plug-in SHOULD have posted positive reviews.
