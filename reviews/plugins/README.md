@@ -24,7 +24,7 @@ The search for a plug-in usually starts at the offical [WordPress plugins archiv
 <br />A plug-in's code SHOULD be reviewable or, when the plug-in has to be purchased, at least be available beforehand.
 
 - Compatibility
-<br />The plug-in MUST be compatible with the latest (stable) version of WordPress and not interfere with any other plug-in(s) that are used. Compatibility issues with other plug-ins might be documented on the plug-in site itself or could be found during installation.
+<br />The plug-in SHOULD be compatible with the latest (stable) version of WordPress and not interfere with any other plug-in(s) that are used. Compatibility issues with other plug-ins might be documented on the plug-in site itself or could be found during installation.
 
 If wordpress.org shows an older version as compatible, it MUST be reviewed in case the functionality is required (and not available through other plugins).
 
