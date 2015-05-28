@@ -50,3 +50,4 @@ defined('ABSPATH') or die('Direct access not allowed');
 - A plug-in SHALL NOT echo `<script>` and `<style>` tags directly, but instead use `wp_enqueue_style()` and `wp_enqueue_script()` functions
 - All texts in a plug-in MUST be [translateable](https://codex.wordpress.org/I18n_for_WordPress_Developers)
 - Functions in the plug-in SHOULD be [hookable](https://codex.wordpress.org/Plugin_API#Hook_to_WordPress)
+- Plugin SHOULD NOT have any active vulnerabilities known at [wpvulndb.com](https://wpvulndb.com/)
