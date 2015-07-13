@@ -15,7 +15,7 @@ Including the date of when checked for the last time
 Check if the plugin is already whitelisted, and if it contains any notes
 
 
-**Reviews en support:**
+**Reviews and support:**
 - Requires WP version: 1.0.0
 - Compatible up to WP version: 1.0.0
 - Last Updated: 00-00-0000
