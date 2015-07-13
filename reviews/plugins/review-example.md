@@ -28,7 +28,7 @@ Your view on the quality of the code.
 - is the code according to the WordPress Coding Standards?
 - is there sufficent inline and external documentation available?
 - is the code readable and understandable?
-- does de code meet our standards according to the review document?
+- does the code meet our standards according to the review document?
 
 **List of points of attention:**
 - HTTP referrer objects ($_SERVER['HTTP_REFERER’]): eg. Usage not found
