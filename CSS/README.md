@@ -30,9 +30,9 @@ All CSS rules **SHOULD**
 // Yep
 .foo, .foo-bar,
 .baz {
-  display: block;
-  overflow: hidden;
-  margin: 0 auto;
+    display: block;
+    overflow: hidden;
+    margin: 0 auto;
 }
 
 // Nope
@@ -43,12 +43,10 @@ All CSS rules **SHOULD**
     margin: 0 auto }
 ```
 
-In addition, meaningful whitespace **MAY** be used according to these rules:
+In addition, an extra empty line **MAY** follow after each type of property for readability. (especially with the use/need of web-prefixes)
 
-An empty line **MAY** follow after each type of property for readability. (especially with the use/need of web-prefixes)
-
-### Commenting
-All scss files **MUST** provide a C-style docblock. A C-style docblock **SHOULD** have numbered explanations regarding specific parts of the ruleset. Example:
+### Documentation
+All scss files **MUST** provide a C-style docblock. A C-style docblock **MAY** have numbered explanations regarding specific parts of the ruleset. Example:
 
 ```css
 /**
@@ -58,9 +56,9 @@ All scss files **MUST** provide a C-style docblock. A C-style docblock **SHOULD*
  * 2. Add ellipsis at the end of the line.
  */
 .ellipsis {
-  white-space: nowrap; /* 1 */
-  text-overflow: ellipsis; /* 2 */
-  overflow: hidden;
+    white-space: nowrap; /* 1 */
+    text-overflow: ellipsis; /* 2 */
+    overflow: hidden;
 }
 ```
 
@@ -72,10 +70,13 @@ When commenting a specific section, inline comments **MAY** be used instead of a
 $imported-modules: append($imported-modules, $module) !global;
 ```
 
-When commenting function and mixins, the docblock **MUST** be provided with the return value and/or the parameters. For instance:
-```css
+When commenting function and mixins, the docblock **MUST** be provided with a summary, a description of the return value and/or the parameters. For instance:
+
+```SCSS
 /**
  * Return a new layout based on current and given settings
+ *
+ * @see https://github.com/oddbird/susy/blob/master/sass/susy/language/susy/_grids.scss
  * @param $layout {map} SASS map that contains all necessary configuration
  * @param $clean {boolean} Set to true to return a something or another
  * @return map
@@ -86,15 +87,11 @@ When commenting function and mixins, the docblock **MUST** be provided with the 
 }
 ```
 
-
-### Documentation
-[SassDoc](http://sassdoc.com/) provides tooling for creating (online) documentation for your (SASS)-project. Although it is recommended to use above commenting guidelines, since they will easily merge with i.e SassDoc, creating project Documentation is not obliged yet.
-
 ## Production
 Always minify css files that are used for production. Serve as small a file as possible. That also means that only those rules are served for a request that are actually needed for that request. Don't try to cram everything into one file, but split it up into multiple files and only load those files that are needed at a particular page that a visitor is viewing.
 
 ## Architecture
-At Netwerven we use the [7-to-1 Pattern](http://sass-guidelin.es/#the-7-1-pattern). In its core, this approach advocates using a single style sheet. Since this is suboptimal for performance, we're only using the proposed folder structure to organise our sass files.
+[7-to-1 Pattern](http://sass-guidelin.es/#the-7-1-pattern). In its core, this approach advocates using a single style sheet. Since this is suboptimal for performance, we're only using the proposed folder structure to organise our sass files.
 
 ### Categories
 Style rules are organised in the following subfolders:
@@ -174,13 +171,14 @@ A good naming convention will tell you and your team:
 * where a class can be used
 * what (else) a class is related to
 
-Don't: 
+**Don't**: use class names like `red-btn`, `big-warning`, `sidebar`, because those describe the look-and-feel and position of an element, instead of its purpose or contents.
+
+**Do:** use class names like `recruiter-vcard`, `call-to-action`, `notification` and so forth and so on.
 
 ## Depth of Applicability
-To be updated -> rendering (short movie) and nesting guidelines.
+Read the section [depth of applicability at smacss.com](https://smacss.com/book/applicability).
 
 ## Suggested reading
-[SMACCS](https://drive.google.com/drive/u/0/#folders/0B5-_yPc9Puptc25ROWNleVNkU3c/0B3CJLPTEHpHINEZRRTgyeDE5STA)
+[SMACCS](https://smacss.com/)
 [CSS Guidelines] (http://cssguidelin.es/)
 [SASS Guidelines](http://sass-guidelin.es/#css-ruleset)
-[LESS Guidelines] (http://www.runopencode.com/index.php/how-we-code/css-and-less-coding-standards)
