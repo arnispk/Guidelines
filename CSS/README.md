@@ -1,32 +1,30 @@
 # CSS Coding Guidelines
 
-## Key principles
-
-**KISS (Keep.It.Simple.Stupid)<br />
-& <br />
-DRY (Don’t.Repeat.Yourself)**
-
-## Formatting
+## Development
 
 ### General
-* utf-8 character encoding for each file
-* unix line-endings
-* four (4) space indent
-* properly written, multi-line CSS rules
-* meaningful use of whitespace (see also: CSS Ruleset)
-* Strings in single quotes. urls being strings, are single quoted as well.
-* A value of zero (0) will not be followed by a unit
-* Decimals below one (1) will be proceded by a leading zero
+All scss files **MUST**:
+* use and define utf-8 character encoding for each file
+* have unix line-endings
+* use four (4) space indents
+* have properly written, multi-line (S)CSS rules
+* use meaningful use of whitespace (see also: CSS Ruleset)
+* have strings in single quotes. Urls being strings, are single quoted as well.
+* precede decimal numbers below 1 with a zero (eg. 0.4)
+* **NOT** assign a unit type to a property value of zero (0px vs 0)
 
 ### CSS Ruleset
-
-* related selectors on the same line; unrelated selectors on new lines
+All CSS rules **MUST** have:
 * the opening brace `{` spaced from the last selector by a single space
 * each declaration on its own new line
 * a space after the colon `:`
 * a trailing semi-colon `;` at the end of all declarations
 * the closing brace `}` on its own new line
-* a new line after the closing brace `}`
+
+All CSS rules **SHOULD**
+* put related selectors on the same line; unrelated selectors on new lines
+* have a space before the colon `:`
+* have at least one new line after the closing brace `}`
 
 ```
 // Yep
@@ -45,14 +43,7 @@ DRY (Don’t.Repeat.Yourself)**
     margin: 0 auto }
 ```
 
-In addition meaningful whitespace may be used according to these rules:
-
-* Properties are grouped by type (in order of priority).
-  1. Box
-  2. Border
-  3. Background
-  4. Text
-  5. Other
+In addition, meaningful whitespace may be used according to these rules:
 
 An empty line may follow after each type of property for readability. (especially with the use/need of web-prefixes)
 
@@ -71,94 +62,103 @@ Provide a C-style comment for every module you style. A C-style comment hosts nu
   overflow: hidden;
 }
 ```
+
 When commenting a specific section, use inline comments instead of a C-style block. This makes the comment invisible in the output, even in expanded mode during development. Example:
+
 ```
 // Add current module to the list of imported modules.
 // `!global` flag is required so it actually updates the global variable.
 $imported-modules: append($imported-modules, $module) !global;
 ```
-Although there is no such thing as *too much* commenting, please always minify all css on production.
 
 ### Documentation
 [SassDoc](http://sassdoc.com/) provides tooling for creating (online) documentation for your (SASS)-project. Although it is recommended to use above commenting guidelines, since they will easily merge with i.e SassDoc, creating project Documentation is not obliged yet.
 
+## Production
+Always minify css files that are used for production. Serve as small a file as possible. That also means that only those rules are served for a request that are actually needed for that request. Don't try to cram everything into one file, but split it up into multiple files and only load those files that are needed at a particular page that a visitor is viewing.
+
 ## Architecture
-At Netwerven we use the 7-to-1 Pattern.
+At Netwerven we use the [7-to-1 Pattern](http://sass-guidelin.es/#the-7-1-pattern). In its core, this approach advocates using a single style sheet. Since this is suboptimal for performance, we're only using the proposed folder structure to organise our sass files.
 
 ### Categories
-Categorize your stylesheets.
+Style rules are organised in the following subfolders:
 
-*7-to-1 Pattern*
+1. base/<br />
+Contains files that have style rules that apply to all pages in the site
 
-1. base/
-2. components/
-3. layout/
-4. pages/
-5. themes/
-6. utils/
-7. vendors/
+2. components/<br />
+Each component, that is used in the site, be it a search bar, the main menu, a banner or a block that displays vacancy details, has its styling contained in a single file. The component should be styled in such a way that it's not aware of its context (width of its parent container). This way, components become reusable, easily portable and more maintainable.
 
-1 file to rule them all (main.scss). When using critical path, there may be several style files.
+3. layout/<br />
+Holds files that contain styling for menus, grids, forms etc.
+
+4. themes/<br />
+If pages in the site use different set-ups, for instance if some pages have a header image and others don't, there a pages that have three columns and others use four, this folder holds the sass files that define those differences.
+
+5. pages/<br />
+Even if different themes have been defined, it might be needed to differentiate between distinct pages in the site. Those rules go here.
+
+6. utils/<br />
+Mixins, helpers, functions etc. etc.
+
+7. vendor/<br />
+Everything that cannot be resolved through a dependency manager like [Bower](http://bower.io/), composer or NPM, should be placed in this folder. Each file should have a docblock that describes what the contents of the file are for and what the source (url) is.
 
 ### Sample Directory Structure
 ```
 sass/
 |
 |– base/
-|   |– _reset.scss       # Reset/normalize
-|   |– _typography.scss  # Typography rules
-|   ...                  # Etc…
+|   |– _fonts.scss
+|   |– _normalize.scss
+|   ...
 |
 |– components/
-|   |– _buttons.scss     # Buttons
-|   |– _carousel.scss    # Carousel
-|   |– _cover.scss       # Cover
-|   |– _dropdown.scss    # Dropdown
-|   ...                  # Etc…
+|   |– _buttons.scss
+|   |– _carousel.scss
+|   |– _dropdown.scss
+|   ...
 |
 |– layout/
-|   |– _navigation.scss  # Navigation
-|   |– _grid.scss        # Grid system
-|   |– _header.scss      # Header
-|   |– _footer.scss      # Footer
-|   |– _sidebar.scss     # Sidebar
-|   |– _forms.scss       # Forms
-|   ...                  # Etc…
+|   |– _grid.scss
+|   |– _main-menu.scss
+|   |– _site-footer.scss
+|   |– _site-header.scss
+|   ...
 |
 |– pages/
-|   |– _home.scss        # Home specific styles
-|   |– _contact.scss     # Contact specific styles
-|   ...                  # Etc…
+|   |– _home.scss
+|   |– _contact.scss
+|   ...
 |
 |– themes/
-|   |– _theme.scss       # Default theme
-|   |– _admin.scss       # Admin theme
-|   ...                  # Etc…
+|   |– _main.scss
+|   |– _no-header.scss
+|   |– _sidebar.scss
+|   ...
 |
 |– utils/
-|   |– _variables.scss   # Sass Variables
-|   |– _functions.scss   # Sass Functions
-|   |– _mixins.scss      # Sass Mixins
-|   |– _helpers.scss     # Class & placeholders helpers
+|   |– _variables.scss
+|   |– _functions.scss
+|   |– _mixins.scss
+|   |– _helpers.scss
+|   ...
 |
-|– vendors/
-|   |– _bootstrap.scss   # Bootstrap
-|   |– _jquery-ui.scss   # jQuery UI
-|   ...                  # Etc…
+|– vendor/
+|   |– _jquery-ui.scss
+|   |– _select2.scss
+|   ...
 |
-|
-`– main.scss             # Main Sass file
 ```
+
 ## Naming Conventions
-Architecture is giving inmidiate directions for naming conventions.  The use of naming convention is beneficial for immediately understanding which category a particular style belongs to and its role within the overall scope of the page.
-
-On large projects, it is more likely to have styles broken up across multiple files. In these cases, naming convention also makes it easier to find which file a style belongs to.
-
 A good naming convention will tell you and your team:
 
 * what type of thing a class does
 * where a class can be used
 * what (else) a class is related to
+
+Don't: 
 
 ## Depth of Applicability
 To be updated -> rendering (short movie) and nesting guidelines.
