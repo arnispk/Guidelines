@@ -26,7 +26,7 @@ All CSS rules **SHOULD**
 * have a space before the colon `:`
 * have at least one new line after the closing brace `}`
 
-```
+```css
 // Yep
 .foo, .foo-bar,
 .baz {
@@ -43,13 +43,14 @@ All CSS rules **SHOULD**
     margin: 0 auto }
 ```
 
-In addition, meaningful whitespace may be used according to these rules:
+In addition, meaningful whitespace **MAY** be used according to these rules:
 
-An empty line may follow after each type of property for readability. (especially with the use/need of web-prefixes)
+An empty line **MAY** follow after each type of property for readability. (especially with the use/need of web-prefixes)
 
 ### Commenting
-Provide a C-style comment for every module you style. A C-style comment hosts numbered explanations regarding specific parts of the ruleset. Example:
-```
+All scss files **MUST** provide a C-style docblock. A C-style docblock **SHOULD** have numbered explanations regarding specific parts of the ruleset. Example:
+
+```css
 /**
  * Helper class to truncate and add ellipsis to a string too long for it to fit
  * on a single line.
@@ -63,13 +64,28 @@ Provide a C-style comment for every module you style. A C-style comment hosts nu
 }
 ```
 
-When commenting a specific section, use inline comments instead of a C-style block. This makes the comment invisible in the output, even in expanded mode during development. Example:
+When commenting a specific section, inline comments **MAY** be used instead of a C-style docblock. Example:
 
 ```
 // Add current module to the list of imported modules.
 // `!global` flag is required so it actually updates the global variable.
 $imported-modules: append($imported-modules, $module) !global;
 ```
+
+When commenting function and mixins, the docblock **MUST** be provided with the return value and/or the parameters. For instance:
+```css
+/**
+ * Return a new layout based on current and given settings
+ * @param $layout {map} SASS map that contains all necessary configuration
+ * @param $clean {boolean} Set to true to return a something or another
+ * @return map
+ */
+@function _get-layout($layout, $clean: false) {
+    $layout: layout($layout);
+    @return if($clean, $layout, _susy-deep-merge($susy, $layout));
+}
+```
+
 
 ### Documentation
 [SassDoc](http://sassdoc.com/) provides tooling for creating (online) documentation for your (SASS)-project. Although it is recommended to use above commenting guidelines, since they will easily merge with i.e SassDoc, creating project Documentation is not obliged yet.
