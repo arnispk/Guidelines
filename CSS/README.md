@@ -179,6 +179,6 @@ A good naming convention will tell you and your team:
 Read the section [depth of applicability at smacss.com](https://smacss.com/book/applicability).
 
 ## Suggested reading
-[SMACCS](https://smacss.com/)
-[CSS Guidelines] (http://cssguidelin.es/)
+[SMACCS](https://smacss.com/)<br />
+[CSS Guidelines] (http://cssguidelin.es/)<br />
 [SASS Guidelines](http://sass-guidelin.es/#css-ruleset)
