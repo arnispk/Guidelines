@@ -3,7 +3,7 @@
 ## Development
 
 ### General
-All scss files **MUST**:
+All scss files MUST:
 * use and define utf-8 character encoding for each file
 * have unix line-endings
 * use four (4) space indents
@@ -11,17 +11,17 @@ All scss files **MUST**:
 * use meaningful use of whitespace (see also: CSS Ruleset)
 * have strings in single quotes. Urls being strings, are single quoted as well.
 * precede decimal numbers below 1 with a zero (eg. 0.4)
-* **NOT** assign a unit type to a property value of zero (0px vs 0)
+* NOT assign a unit type to a property value of zero (0px vs 0)
 
 ### CSS Ruleset
-All CSS rules **MUST** have:
+All CSS rules MUST have:
 * the opening brace `{` spaced from the last selector by a single space
 * each declaration on its own new line
 * a space after the colon `:`
 * a trailing semi-colon `;` at the end of all declarations
 * the closing brace `}` on its own new line
 
-All CSS rules **SHOULD**
+All CSS rules SHOULD
 * put related selectors on the same line; unrelated selectors on new lines:<br/>
 
 ```css
@@ -42,7 +42,7 @@ All CSS rules **SHOULD**
 ```
 * have at least one new line after the closing brace `}`
 
-All CSS rules **MAY**
+All CSS rules MAY
 * have a space before the colon `:`
 * be outlined on the colon within a rule set, like so:<br/>
 ```css
@@ -52,10 +52,10 @@ margin     : 0;
 padding    : 0;
 ```
 
-In addition, an extra empty line **MAY** follow after each type of property for readability. (especially with the use/need of web-prefixes)
+In addition, an extra empty line MAY follow after each type of property for readability. (especially with the use/need of web-prefixes)
 
 ### Documentation
-All scss files **MUST** provide a C-style docblock. A C-style docblock **MAY** have numbered explanations regarding specific parts of the ruleset. Example:
+All scss files MUST provide a C-style docblock. A C-style docblock MAY have numbered explanations regarding specific parts of the ruleset. Example:
 
 ```css
 /**
@@ -79,7 +79,7 @@ When commenting a specific section, inline comments **MAY** be used instead of a
 $imported-modules: append($imported-modules, $module) !global;
 ```
 
-When commenting function and mixins, the docblock **MUST** be provided with a summary, a description of the return value and/or the parameters. For instance:
+When commenting function and mixins, the docblock MUST be provided with a summary, a description of the return value and/or the parameters. For instance:
 
 ```SCSS
 /**
