@@ -22,9 +22,7 @@ All CSS rules **MUST** have:
 * the closing brace `}` on its own new line
 
 All CSS rules **SHOULD**
-* put related selectors on the same line; unrelated selectors on new lines
-* have a space before the colon `:`
-* have at least one new line after the closing brace `}`
+* put related selectors on the same line; unrelated selectors on new lines:<br/>
 
 ```css
 // Yep
@@ -41,6 +39,17 @@ All CSS rules **SHOULD**
     display: block;
     overflow: hidden;
     margin: 0 auto }
+```
+* have at least one new line after the closing brace `}`
+
+All CSS rules **MAY**
+* have a space before the colon `:`
+* be outlined on the colon within a rule set, like so:<br/>
+```css
+background : none;
+border     : 0;
+margin     : 0;
+padding    : 0;
 ```
 
 In addition, an extra empty line **MAY** follow after each type of property for readability. (especially with the use/need of web-prefixes)
