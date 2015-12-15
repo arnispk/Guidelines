@@ -1,31 +1,31 @@
 # SQL style guide
 
-- General
-  - Do
-  - Avoid
-- Naming conventions
-  - General
-  - Tables
-  - Columns
-  - Aliasing or correlations
-  - Stored procedures
-  - Uniform suffixes
-- Query syntax
-  - Reserved words
-  - White space
-  - Indentation
-  - Preferred formalisms 
-- Create syntax
-  - Choosing data types 
-  - Specifying default values 
-  - Constraints and keys
-  - Designs to avoid
-- Appendix
-  - Reserved keyword reference
+- [1. General](#1-general)
+  - [1.1 Do](#)
+  - [1.2 Avoid](#)
+- [2. Naming conventions](#)
+  - [2.1 General](#)
+  - [2.2 Tables](#)
+  - [2.3 Columns](#)
+  - [2.4 Aliasing or correlations](#)
+  - [2.5 Stored procedures](#)
+  - [2.6 Uniform suffixes](#)
+- [3. Query syntax](#)
+  - [3.1 Reserved words](#)
+  - [3.2 White space](#)
+  - [3.3 Indentation](#)
+  - [3.4 Preferred formalisms](#)
+- [4. Create syntax](#)
+  - [4.1 Choosing data types](#)
+  - [4.2 Specifying default values](#)
+  - [4.3 Constraints and keys](#)
+  - [4.4 Designs to avoid](#)
+- [5. Appendix](#)
+  - [5.1 Reserved keyword reference](#)
 
-## General
+## 1. General
 
-### Do
+### 1.1 Do
 
 * Use consistent and descriptive identifiers and names.
 * Make judicious use of white space and indentation to make code easier to read.
@@ -39,7 +39,7 @@
   closing `*/` where possible otherwise preceed comments with `--` and finish
   them with a new line.
 
-### Avoid
+### 1.2 Avoid
 
 * CamelCase—it is difficult to scan quickly.
 * Descriptive prefixes or Hungarian notation such as `sp_` or `tbl`.
@@ -64,9 +64,9 @@ UPDATE file_system
  WHERE file_name = '.vimrc';
 ```
 
-## Naming conventions
+## 2. Naming conventions
 
-### General
+### 2.1 General
 
 * Ensure the name is unique and does not exist as a
   [reserved keyword][reserved-keywords].
@@ -85,7 +85,7 @@ SELECT first_name
   FROM staff;
 ```
 
-### Tables
+### 2.2 Tables
 
 * Use a collective name or, less ideally, a plural form. For example (in order of
   preference) `staff` and `employees`.
@@ -95,14 +95,14 @@ SELECT first_name
 * Avoid, where possible, concatenating two table names together to create the name
   of a relationship table. Rather than `cars_mechanics` prefer `services`.
 
-### Columns
+### 2.3 Columns
 
 * Always use the singular name.
 * Where possible avoid simply using `id` as the primary identifier for the table.
 * Do not add a column with the same name as its table and vice versa.
 * Always use lowercase except where it may make sense not to such as proper nouns.
 
-### Aliasing or correlations
+### 2.4 Aliasing or correlations
 
 * Should relate in some way to the object or expression they are aliasing.
 * As a rule of thumb the correlation name should be the first letter of each word
@@ -123,13 +123,13 @@ SELECT SUM(s.monitor_tally) AS monitor_total
   FROM staff AS s;
 ```
 
-### Stored procedures
+### 2.5 Stored procedures
 
 * The name must contain a verb.
 * Do not prefix with `sp_` or any other such descriptive prefix or Hungarian
   notation.
 
-### Uniform suffixes
+### 2.6 Uniform suffixes
 
 The following suffixes have a universal meaning ensuring the columns can be read
 and understood easily from SQL code. Use the correct suffix where appropriate.
@@ -147,9 +147,9 @@ and understood easily from SQL code. Use the correct suffix where appropriate.
 * `_addr`—an address for the record could be physical or intangible such as
   `ip_addr`.
 
-## Query syntax
+## 3. Query syntax
 
-### Reserved words
+### 3.1 Reserved words
 
 Always use uppercase for the [reserved keywords][reserved-keywords]
 like `SELECT` and `WHERE`.
@@ -166,7 +166,7 @@ SELECT model_num
  WHERE p.release_date > '2014-09-30';
 ```
 
-### White space
+### 3.2 White space
 
 To make the code easier to read it is important that the correct compliment of
 spacing is used. Do not crowd code or remove natural language spaces.
@@ -238,7 +238,7 @@ SELECT a.title,
     OR a.title = 'The New Danger';
 ```
 
-### Indentation
+### 3.3 Indentation
 
 To ensure that SQL is readable it is important that standards of indentation
 are followed.
@@ -281,7 +281,7 @@ SELECT r.last_name,
            AND c.confirmed = 'Y');
 ```
 
-### Preferred formalisms
+### 3.4 Preferred formalisms
 
 * Make use of `BETWEEN` where possible instead of combining multiple statements
   with `AND`.
@@ -303,7 +303,7 @@ SELECT CASE postcode
    AND postcode IN ('EH1', 'BN1', 'NN1', 'KW1')
 ```
 
-## Create syntax
+## 4. Create syntax
 
 When declaring schema information it is also important to maintain human
 readable code. To facilitate this ensure the column definitions are ordered and
@@ -311,7 +311,7 @@ grouped where it makes sense to do so.
 
 Indent column definitions by four (4) spaces within the `CREATE` definition.
 
-### Choosing data types
+### 4.1 Choosing data types
 
 * Where possible do not use vendor specific data types—these are not portable and
   may not be available in older versions of the same vendor's software.
@@ -319,14 +319,14 @@ Indent column definitions by four (4) spaces within the `CREATE` definition.
   point mathematics otherwise prefer `NUMERIC` and `DECIMAL` at all times. Floating
   point rounding errors are a nuisance!
 
-### Specifying default values
+### 4.2 Specifying default values
 
 * The default value must be the same type as the column—if a column is declared
   a `DECIMAL` do not provide an `INTEGER` default value.
 * Default values must follow the data type declaration and come before any
   `NOT NULL` statement.
 
-### Constraints and keys
+### 4.3 Constraints and keys
 
 Constraints and their subset, keys, are a very important component of any
 database definition. They can quickly become very difficult to read and reason
@@ -400,7 +400,7 @@ CREATE TABLE staff (
 );
 ```
 
-### Designs to avoid
+### 4.4 Designs to avoid
 
 * Object oriented design principles do not effectively translate to relational
   database designs—avoid this pitfall.
@@ -416,9 +416,9 @@ CREATE TABLE staff (
   rather than just simply querying one table.
 
 
-## Appendix
+## 5. Appendix
 
-### Reserved keyword reference
+### 5.1 Reserved keyword reference
 
 A list of ANSI SQL (92, 99 and 2003), MySQL 3 to 5.x, PostgreSQL 8.1, MS SQL Server 2000, MS ODBC and Oracle 10.2 reserved keywords.
 
