@@ -29,8 +29,7 @@ The search for a plug-in usually starts at the offical [WordPress plugins archiv
 If wordpress.org shows an older version as compatible, it MUST be reviewed in case the functionality is required (and not available through other plugins).
 
 ## Review
-Once a plug-in has been selected and this plug-in is not listed in the [collection of approved and already deployed plug-ins](/#todo), the plug-in MUST be reviewed by the team's lead or the CTO.
-
+Once a plug-in has been selected and this plug-in is not listed in the [collection of approved and already deployed plug-ins](/#todo), the plug-in MUST be reviewed by the security officer. Only if a plug-ins usage has been approved by the security officer, can it be used. 
 ### Approval
 If a plug-in is approved, it can be deployed and [the list of approved and already deployed plug-ins](/#todo) MUST be updated by the approver.
 
