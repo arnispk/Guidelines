@@ -1,5 +1,7 @@
 # SQL style guide
 
+Source: [sqlstyle.guide](http://www.sqlstyle.guide/)
+
 - [1. General](#1-general)
   - [1.1 Do](#11-do)
   - [1.2 Avoid](#12-avoid)
